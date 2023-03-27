@@ -1,5 +1,5 @@
 # job4j_design
-Уровень Junior 
+**Уровень Junior **
 
 2.1.0. Maven
 
