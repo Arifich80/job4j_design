@@ -38,7 +38,7 @@ class BoxTest {
     }
 
     @Test
-    void NumberOfVertices() {
+    void numberOfVertices() {
         Box box = new Box(8, 12);
         int result = box.getNumberOfVertices();
         assertThat(result).isEqualTo(8)
@@ -46,7 +46,7 @@ class BoxTest {
     }
 
     @Test
-    void WrongNumberOfVertices() {
+    void wrongNumberOfVertices() {
         Box box = new Box(10, 12);
         int result = box.getNumberOfVertices();
         assertThat(result).isNotEqualTo(10)
@@ -54,7 +54,7 @@ class BoxTest {
     }
 
     @Test
-    void CubeArea() {
+    void cubeArea() {
         Box box = new Box(10, 12);
         double result = box.getArea();
         assertThat(result).isEqualTo(0.0)
@@ -62,7 +62,7 @@ class BoxTest {
     }
 
     @Test
-    void TetrahedronArea() {
+    void tetrahedronArea() {
         Box box = new Box(4, 0);
         double result = box.getArea();
         assertThat(result).isEqualTo(0.0)
