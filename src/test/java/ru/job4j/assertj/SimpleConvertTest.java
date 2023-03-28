@@ -47,7 +47,7 @@ class SimpleConvertTest {
     @Test
     void checkMap() {
         SimpleConvert simpleConvert = new SimpleConvert();
-        Map map = simpleConvert.toMap( "1", "2", "3", "4", "5", "6", "7");
+        Map map = simpleConvert.toMap("1", "2", "3", "4", "5", "6", "7");
         assertThat(map).hasSize(7)
                 .containsKey("4")
                 .doesNotContainKey("8")
