@@ -59,7 +59,7 @@ class BoxTest {
     void cubeArea() {
         Box box = new Box(10, 12);
         double result = box.getArea();
-        assertThat(result).isCloseTo(0.0 , withPrecision(0.001))
+        assertThat(result).isCloseTo(0.0, withPrecision(0.001))
                 .isCloseTo(0.0, Percentage.withPercentage(1.0d))
                 .isLessThan(0.1d)
                 .isGreaterThan(-0.1d);
