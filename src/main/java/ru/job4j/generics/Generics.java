@@ -29,23 +29,23 @@ public class Generics {
         /** gen.printLowerBoundedWildCard(third); **/
     }
 
-    public void printObject(List<Object> list) {
-        for (Iterator<Object> it = list.iterator(); it.hasNext();) {
+    public void printObject(List<?> list) {
+        for (Iterator<?> it = list.iterator(); it.hasNext();) {
             Object next = it.next();
             System.out.println("Текущий элемент: " + next);
         }
     }
 
-    public void printBoundedWildCard(List<Predator> list) {
-        for (Iterator<? extends Animal> it = list.iterator(); it.hasNext();) {
-            Animal next = it.next();
+    public void printBoundedWildCard(List<? extends Predator> list) {
+        for (Iterator<? extends Predator> it = list.iterator(); it.hasNext();) {
+            Predator next = it.next();
             System.out.println("Текущий элемент: " + next);
         }
     }
 
-    public void printLowerBoundedWildCard(List<Predator> list) {
+    public void printLowerBoundedWildCard(List<? super Predator> list) {
         for (Iterator<? super Predator> it = list.iterator(); it.hasNext();) {
-            Object next = it.next();
+            Predator next = (Predator) it.next();
             System.out.println("Текущий элемент: " + next);
         }
     }
