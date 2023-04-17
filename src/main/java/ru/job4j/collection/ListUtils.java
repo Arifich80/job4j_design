@@ -8,21 +8,12 @@ public class ListUtils {
 
     public static <T> void addBefore(List<T> list, int index, T value) {
         Objects.checkIndex(index, list.size());
-        ListIterator<T> iterator = list.listIterator();
-        while (iterator.hasNext()) {
-            if (iterator.nextIndex() == index) {
-                iterator.add(value);
-                break;
-            }
-            iterator.next();
-        }
+        list.listIterator(index).add(value);
     }
 
     public static <T> void addAfter(List<T> list, int index, T value) {
-        Objects.checkIndex(index + 1, list.size());
-        ListIterator<T> iterator = list.listIterator(index + 1);
-        iterator.add(value);
-
+        Objects.checkIndex(index, list.size());
+        list.listIterator(index + 1).add(value);
     }
 
     public static <T> void removeIf(List<T> list, Predicate<T> filter) {
@@ -43,12 +34,12 @@ public class ListUtils {
         }
     }
 
+    @SuppressWarnings("checkstyle:WhitespaceAfter")
     public static <T> void removeAll(List<T> list, List<T> elements) {
-        ListIterator<T> iterator = list.listIterator();
+        ListIterator<T> iterator = elements.listIterator();
         while (iterator.hasNext()) {
-            if (elements.contains(iterator.next())) {
-                iterator.remove();
-            }
+            T el = iterator.next();
+            list.remove(el);
         }
     }
 }
